@@ -1,6 +1,7 @@
 <h1>Displaying <%= pluralize(@talks.count, 'talk') %></h1>
 
 <% @talks.each do |t| %>
+  <img src="http://placehold.it/350x150">
   <h2><%=link_to(t.title, t) %></h2>
   <h3>a conversation with <%= t.speaker %></h3>
   <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
