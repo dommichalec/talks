@@ -1,4 +1,5 @@
 <h1><%= @talk.title %></h1>
-<p>a conversation with <%= @talk.speaker %></p>
+<p class='lead'>a conversation with <%= @talk.speaker %></p>
+<p class='text-muted'><%= @talk.topic %></p>
 
 <%= link_to('Go back to all talks', talks_path) %>

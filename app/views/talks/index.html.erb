@@ -3,6 +3,6 @@
 <% @talks.each do |t| %>
   <h2><%=link_to(t.title, t) %></h2>
   <h3>a conversation with <%= t.speaker %></h3>
-  <h3><%= truncate(t.speaker_profile, :length => 100, separator: ' ') %></h3>
+  <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
   <h4><%= t.date %></h4>
 <% end %>
