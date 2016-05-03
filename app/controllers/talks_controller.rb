@@ -20,6 +20,19 @@ class TalksController < ApplicationController
     end
   end
 
+  def new
+    @talk = Talk.new
+  end
+
+  def create
+    @talk = Talk.new(talk_params)
+    if @talk.save
+      redirect_to root_path, notice: "#{@talk.title} with #{@talk.speaker} has been added to upcoming talks!"
+    else
+      render :new
+    end
+  end
+
   private
 
   def talk_params

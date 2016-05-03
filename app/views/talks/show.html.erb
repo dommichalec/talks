@@ -1,9 +1,10 @@
-<h1><%= @talk.title %></h1>
-<p class='lead'>a conversation with <%= @talk.speaker %></p>
-<p class='text-muted'><%= @talk.topic %></p>
-<img src="http://placehold.it/950x550">
-<h4>About <%= @talk.speaker %></h4>
-<p><%= @talk.speaker_profile %></p>
+<div class='container'>
+  <h1><%= @talk.title %></h1>
+  <p class='text-muted'><%= @talk.topic %></p>
+  <img src="http://placehold.it/950x550">
+  <h4>About <%= @talk.speaker %></h4>
+  <p><%= @talk.speaker_profile %></p>
 
-<%= link_to('Edit this talk', edit_talk_path) %> | 
-<%= link_to('Go back to all talks', talks_path) %>
+  <%= link_to('Edit this talk', edit_talk_path) %> |
+  <%= link_to('Go back to all talks', talks_path) %>
+</div>

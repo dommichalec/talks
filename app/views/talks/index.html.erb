@@ -1,15 +1,23 @@
-<h1>Displaying <%= pluralize(@talks.count, 'talk') %></h1>
-
-<% @talks.each do |t| %>
-  <div class="row">
-    <div class="col-md-4 col-md-push-7">
-      <img style="padding-top: 33px;" src="http://placehold.it/350x150">
-    </div>
-    <div class="col-md-7 col-md-pull-4">
-      <h3><%=link_to(t.title, t) %></h3>
-      <h5>a conversation with <%= t.speaker %> <span class="label label-success">Register today</span></h5>
-      <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
-      <h4>Date and time: <%= t.date %></h4>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Interesting conversations with those who've been there, done that, and learned something along the way.</h1>
   </div>
-<% end %>
+</div>
+<div class='container'>
+  <h1 class='centered'><%= pluralize(@talks.count, 'upcoming live talk') %></h1>
+
+  <% @talks.each do |t| %>
+    <div class="row">
+      <div class="col-md-4 col-md-push-8">
+        <img style="padding-top: 33px; border-radius: 30px;" src="http://placehold.it/150x150">
+      </div>
+      <div class="col-md-8 col-md-pull-4">
+        <h3><%=link_to(t.title, t) %> <span class="label label-info">Register today!</span></h3>
+        <h5>a conversation with <%= t.speaker %></h5>
+        <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
+        <h4>Date and time: <%= t.date %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to('Add a new talk', new_talk_path) %>

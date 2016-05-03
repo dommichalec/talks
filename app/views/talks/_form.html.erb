@@ -1,0 +1,23 @@
+<%= form_for(@talk) do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :topic %>
+    <%= f.text_field :topic %>
+  </p>
+  <p>
+    <%= f.label :speaker %>
+    <%= f.text_field :speaker %>
+  </p>
+  <p>
+    <%= f.label :speaker_profile %>
+    <%= f.text_field :speaker_profile %>
+  </p>
+  <p>
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </p>
+  <%= f.submit %>
+<% end %>
