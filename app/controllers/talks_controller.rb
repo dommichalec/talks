@@ -44,6 +44,6 @@ class TalksController < ApplicationController
   private
 
   def talk_params
-    params.require(:talk).permit(:title, :topic, :speaker, :speaker_profile, :date)
+    params.require(:talk).permit(:title, :topic, :speaker, :speaker_profile, :date, :capacity)
   end
 end
