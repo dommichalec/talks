@@ -1,9 +1,15 @@
 <h1>Displaying <%= pluralize(@talks.count, 'talk') %></h1>
 
 <% @talks.each do |t| %>
-  <img src="http://placehold.it/350x150">
-  <h2><%=link_to(t.title, t) %></h2>
-  <h3>a conversation with <%= t.speaker %></h3>
-  <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
-  <h4><%= t.date %></h4>
+  <div class="row">
+    <div class="col-md-4 col-md-push-7">
+      <img style="padding-top: 33px;" src="http://placehold.it/350x150">
+    </div>
+    <div class="col-md-7 col-md-pull-4">
+      <h3><%=link_to(t.title, t) %></h3>
+      <h5>a conversation with <%= t.speaker %> <span class="label label-success">Register today</span></h5>
+      <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
+      <h4>Date and time: <%= t.date %></h4>
+    </div>
+  </div>
 <% end %>
