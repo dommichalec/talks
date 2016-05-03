@@ -1,6 +1,7 @@
 class TalksController < ApplicationController
+
   def index
-    @talks = Talk.all
+    @talks = Talk.upcoming
   end
 
   def show
@@ -31,6 +32,13 @@ class TalksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @talk = Talk.find(params[:id])
+    title, speaker = @talk.title, @talk.speaker
+    @talk.destroy
+    redirect_to root_path, notice: "#{title} with #{speaker} has been successfully removed from the site!"
   end
 
   private

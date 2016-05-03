@@ -17,6 +17,13 @@
  .centered {
    text-align: center;
  }
- 
+
+ .speaker-picture {
+  padding-top: 35px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+ }
+
  @import "bootstrap-sprockets";
  @import "bootstrap"

@@ -8,7 +8,10 @@
 </head>
 <body>
 
-  <%= yield %>
+<% if flash[:notice] %>
+  <div class='centered'><%= flash[:notice]%></div>
+<% end %>
+<%= yield %>
 
 </body>
 </html>
