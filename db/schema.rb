@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503140940) do
+ActiveRecord::Schema.define(version: 20160503154637) do
 
   create_table "talks", force: :cascade do |t|
     t.string   "title"
     t.string   "speaker"
     t.string   "topic"
-    t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.text     "speaker_profile"
   end
 
 end
