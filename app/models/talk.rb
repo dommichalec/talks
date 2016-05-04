@@ -13,4 +13,8 @@ class Talk < ActiveRecord::Base
   def spots_left
     capacity - registrations.count
   end
+
+  def sold_out?
+    spots_left.zero?
+  end
 end
