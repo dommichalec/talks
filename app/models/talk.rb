@@ -9,4 +9,8 @@ class Talk < ActiveRecord::Base
   def self.upcoming
     where('date >= ?', Time.now).order('date')
   end
+
+  def spots_left
+    capacity - registrations.count
+  end
 end

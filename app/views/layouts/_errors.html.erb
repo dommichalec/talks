@@ -1,6 +1,6 @@
-<% if @talk.errors.any? %>
-  <p class='lead'>Ah snap! We found <strong><%= pluralize(@talk.errors.count, 'error') %></strong> with your submission: </p>
-  <% @talk.errors.full_messages.each do |m| %>
+<% if object.errors.any? %>
+  <p class='lead'>Ah snap! We found <strong><%= pluralize(object.errors.count, 'error') %></strong> with your submission: </p>
+  <% object.errors.full_messages.each do |m| %>
     <li><%= m %></li>
   <% end %>
 <% end %>

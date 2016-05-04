@@ -1,5 +1,5 @@
 <%= form_for([@talk, @registration]) do |f| %>
-<%= render 'layouts/errors' %><br>
+<%= render 'layouts/errors', object: @registration %><br>
   <p>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
