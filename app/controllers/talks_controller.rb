@@ -15,7 +15,7 @@ class TalksController < ApplicationController
   def update
     @talk = Talk.find(params[:id])
     if @talk.update(talk_params)
-      redirect_to @talk, notice: "#{@talk.title} has been updated!"
+      redirect_to @talk, notice: "#{@talk.title} with #{@talk.speaker} has been updated!"
     else
       render :edit
     end
