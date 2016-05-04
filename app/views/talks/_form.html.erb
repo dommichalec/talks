@@ -1,4 +1,5 @@
 <%= form_for(@talk) do |f| %>
+<%= render 'layouts/errors' %>
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -13,7 +14,7 @@
   </p>
   <p>
     <%= f.label :speaker_profile %>
-    <%= f.text_field :speaker_profile %>
+    <%= f.text_area :speaker_profile %>
   </p>
   <p>
     <%= f.label :date %>

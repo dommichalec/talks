@@ -14,16 +14,92 @@
  *= require_self
  */
 
- .centered {
+.centered {
    text-align: center;
  }
 
- .speaker-picture {
-  padding-top: 35px;
+.jumbotron {
+  margin-top: 5%;
+}
+
+.speaker-picture {
+  padding-top: 20px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
  }
 
- @import "bootstrap-sprockets";
- @import "bootstrap"
+.navbar-brand img {
+   margin-top: -28px;
+   display: inline-block;
+   max-width: 55%;
+   height: auto;
+ }
+
+.navbar {
+   box-shadow: 0px 0px 35px black;
+ }
+
+.navbar-nav li a {
+    line-height: 57px;
+    height: 57px;
+}
+
+.blinking-cursor {
+  font-weight: 100%;
+  font-size: 1.0em;
+  color: #2E3D48;
+  -webkit-animation: 1.2s blink step-end infinite;
+  -moz-animation: 1.2s blink step-end infinite;
+  -ms-animation: 1.2s blink step-end infinite;
+  -o-animation: 1.2s blink step-end infinite;
+  animation: 1.2s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #5ee24f;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #5ee24f;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #5ee24f;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #5ee24f;
+  }
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

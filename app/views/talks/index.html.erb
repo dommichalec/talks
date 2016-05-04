@@ -1,6 +1,6 @@
-<div class="jumbotron jumbotron-fluid">
+<div style="background:transparent !important", class="jumbotron jumbotron-fluid centered">
   <div class="container">
-    <h1>Interesting conversations with those who've been there, coded that, and learned something along the way.</h1>
+    <h1>Candid conversations with those who've been there, coded that, and learned something new along the way.<span class="blinking-cursor">|</span></h1>
   </div>
 </div>
 <div class='container'>
@@ -8,10 +8,10 @@
 
   <% @talks.each do |t| %>
     <div class="row">
-      <div class="col-md-4 col-md-push-8">
+      <div class="col-md-4 col-md-push-9">
         <img class='speaker-picture', src="http://placehold.it/150x150">
       </div>
-      <div class="col-md-8 col-md-pull-4">
+      <div class="col-md-7 col-md-pull-3">
         <h3><%=link_to(t.title, t) %> <span class="label label-info">Register today!</span></h3>
         <h5>a conversation with <%= t.speaker %></h5>
         <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
