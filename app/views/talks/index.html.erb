@@ -12,7 +12,7 @@
         <img class='speaker-picture', src="http://placehold.it/150x150">
       </div>
       <div class="col-md-7 col-md-pull-3">
-        <h3><%=link_to(t.title, t) %> <span class="label label-info">Register today!</span></h3>
+        <h3><%=link_to(t.title, t) %> <%= link_to("Registration now open!", new_talk_registration_path(t), class: 'label label-pill label-success') %></h3>
         <h5>a conversation with <%= t.speaker %></h5>
         <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
         <h4>Date and time: <%= t.date %> (<%= pluralize(t.capacity, 'available spot')%> left)</h4>

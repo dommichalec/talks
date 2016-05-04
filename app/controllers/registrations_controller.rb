@@ -5,4 +5,8 @@ class RegistrationsController < ApplicationController
     @registrations = @talk.registrations
   end
 
+  def new
+    @talk = Talk.find(params[:talk_id])
+    @registration = @talk.registrations.new
+  end
 end

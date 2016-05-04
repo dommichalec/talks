@@ -1,0 +1,16 @@
+<%= form_for([@talk, @registration]) do |f| %>
+<%= render 'layouts/errors' %><br>
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email_address %>
+    <%= f.text_field :email_address %>
+  </p>
+  <%= f.submit %>
+<% end %>
