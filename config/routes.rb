@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :registrations
   root "talks#index"
-  resources :talks
+  
+  resources :talks do
+    resources :registrations
+  end
 end
