@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
   before_action :require_signin
+  before_action :require_admin, only: [:show, :index]
 
   def index
     @talk = Talk.find(params[:talk_id])

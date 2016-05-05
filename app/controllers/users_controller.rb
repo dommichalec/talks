@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @liked_talks = @user.liked_talks
     @registrations = @user.registrations
   end
 

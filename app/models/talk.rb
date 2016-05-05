@@ -1,5 +1,7 @@
 class Talk < ActiveRecord::Base
   has_many :registrations, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :likers, through: :likes, source: :user
 
   validates :title, :speaker, presence: true
   validates :topic, length: { minimum: 45 }

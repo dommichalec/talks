@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :registrations, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_talks, through: :likes, source: :talk
 
   def self.authenticate(email_address, password)
     user = User.find_by(email_address: email_address)
