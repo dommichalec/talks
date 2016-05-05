@@ -1,27 +1,4 @@
 <div class='container'>
   <h1>Create your account<span class="blinking-cursor">|</span></h1>
-  <%= form_for(@user) do |f| %>
-  <%= render 'layouts/errors', object: @user %><br>
-    <p>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </p>
-    <p>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </p>
-    <p>
-      <%= f.label :email_address %>
-      <%= f.text_field :email_address %>
-    </p>
-    <p>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation, "Confirm your password" %>
-      <%= f.password_field :password_confirmation %>
-    </p>
-    <%= f.submit %>
-  <% end %>
+  <%= render 'form' %>
 </div>

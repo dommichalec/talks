@@ -1,6 +1,7 @@
 <div style="background:transparent !important", class="jumbotron jumbotron-fluid centered">
   <div class="container">
-    <h1>Candid conversations with those who've been there, coded that, and learned something new along the way.<span class="blinking-cursor">|</span></h1><br>
+    <h1>Interviews with those who've been there, coded that, and learned something along the way.<span class="blinking-cursor">|</span></h1><br>
+    <%= link_to 'Claim your free membership', signup_path, class: 'btn btn-success btn-lg' %>
   </div>
 </div>
 <div class='container'>
@@ -16,7 +17,7 @@
           <%= display_registration_for(t) %>
         <h5>a conversation with <%= t.speaker %></h5>
         <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
-        <h4>Date and time: <%= t.date %> (<%= pluralize(t.spots_left, 'available spot')%> left)</h4>
+        <h4><%= t.date %> (<%= pluralize(t.spots_left, 'available spot')%> left)</h4>
       </div>
     </div>
   <% end %>
