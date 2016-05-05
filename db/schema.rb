@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505172854) do
+ActiveRecord::Schema.define(version: 20160505181547) do
 
   create_table "registrations", force: :cascade do |t|
     t.integer  "talk_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "question"
   end
 
   add_index "registrations", ["talk_id"], name: "index_registrations_on_talk_id"

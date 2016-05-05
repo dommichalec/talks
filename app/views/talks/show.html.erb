@@ -1,9 +1,10 @@
 <div class='container'>
   <h1><%= @talk.title %><span class="blinking-cursor">|</span></h1>
-  <p class='text-muted'><%= @talk.topic %></p>
+  <p class='text-muted'><%= @talk.topic %>
   <img src="http://placehold.it/950x550">
   <h4>About <%= @talk.speaker %></h4>
   <p><%= @talk.speaker_profile %></p>
+  <h1><%= display_registration_for(@talk) %></h1>
 
   <% if current_user_admin? %>
     <p class='lead'><%= link_to("View registrations", talk_registrations_path(@talk)) %> <em>(<%= @talk.registrations.count %>)</em></p>

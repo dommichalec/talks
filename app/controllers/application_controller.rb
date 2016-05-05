@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def require_signin
     unless current_user
       session[:last_requested_url] = request.url
-      redirect_to root_path, notice: "Please create or sign into your account first."
+      redirect_to new_session_path, notice: "Please create or sign into your account first."
     end
   end
 

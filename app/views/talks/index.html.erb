@@ -1,6 +1,6 @@
 <div style="background:transparent !important", class="jumbotron jumbotron-fluid centered">
   <div class="container">
-    <h1>Interviews with those who've been there, coded that, and learned something along the way.<span class="blinking-cursor">|</span></h1><br>
+    <h1>Candid interviews with those who've been there, coded that, and learned something priceless along the way.<span class="blinking-cursor">|</span></h1><br>
     <%= link_to 'Claim your free membership today', signup_path, class: 'btn btn-success btn-lg' %>
   </div>
 </div>
@@ -26,6 +26,6 @@
     </div>
   <% end %>
 </div>
-<% if current_user && current_user.user_type == 'admin' %>
+<% if current_user_admin? %>
   <%= link_to('Add a new talk', new_talk_path) %>
 <% end %>

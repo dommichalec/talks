@@ -3,7 +3,7 @@ module TalksHelper
     if talk.sold_out?
       content_tag(:p, "Registration is closed!", class: 'label label-pill label-danger')
     else
-      link_to "Registration is open!", new_talk_registration_path(talk), class: 'label label-pill label-success'
+      link_to "Register now!", new_talk_registration_path(talk), class: 'label label-pill label-success'
     end
   end
 end
