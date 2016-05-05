@@ -1,12 +1,12 @@
 <div class='container'>
   <h1><%= "#{@user.first_name} #{@user.last_name}"%><span class="blinking-cursor">|</span></h1>
   <%= profile_image_for(@user) %>
-  <p class='lead'>hacker_talks member since <%= @user.created_at %></p>
+  <p class='lead'>member since <%= @user.created_at %></p>
 
   <% if @registrations.any? %>
-  <h3>Registrations</h3>
+  <h3>Current and past registrations</h3>
     <% @registrations.each do |r| %>
-      <h4><%= link_to(r.talk.title, talk_path) %> (registered <%= time_ago_in_words(r.created_at) %> ago)</h4>
+      <h4><%= link_to(r.talk.title, r.talk) %> (registered <%= time_ago_in_words(r.created_at) %> ago)</h4>
     <% end %>
   <% end %>
   <% if current_user?(@user) %>

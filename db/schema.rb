@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505181547) do
+ActiveRecord::Schema.define(version: 20160505195814) do
 
   create_table "registrations", force: :cascade do |t|
     t.integer  "talk_id"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20160505181547) do
     t.string   "speaker"
     t.string   "topic"
     t.datetime "date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.text     "speaker_profile"
     t.integer  "capacity"
+    t.string   "status",          default: "upcoming"
   end
 
   create_table "users", force: :cascade do |t|

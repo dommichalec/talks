@@ -1,7 +1,7 @@
 <%= form_for([@talk, @registration]) do |f| %>
 <%= render 'layouts/errors', object: @registration %><br>
   <p class= 'lead'>Already have a question for <%= @talk.speaker%>? Add it below and we'll try to get to it during Q&A</p>
-  <p class='lead'><em>(If you don't have a question at the moment, that's cool too. You can still ask it during the talk.)</em></p>
+  <p class='lead'><em>(If you don't have a question at the moment, that's cool too. You can still ask one during the talk.)</em></p>
     <p><%= f.text_field :question, size: "100x10"%></p><br>
     <%= f.submit "Send registration", class: 'btn btn-md btn-success' %>  |
     <%= link_to("Go back to talk details", talk_path(@talk)) %>
