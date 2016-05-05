@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: "Welcome, #{@user.first_name}! You're all set to register for talks."
+      redirect_to root_path, notice: "Welcome to hacker_talks, #{@user.first_name}! You're all set and ready to go."
     else
       render :new
     end

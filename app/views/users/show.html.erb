@@ -1,7 +1,9 @@
 <div class='container'>
   <h1>Your account information<span class="blinking-cursor">|</span></h1>
+  <%= profile_image_for(@user) %>
   <h3><%= @user.first_name %> <%= @user.last_name %></h3>
   <h3><%= @user.email_address %></h3>
+  <p class='lead'>hacker_talks member since <%= @user.created_at %></p>
   <%= link_to('Edit your account settings', edit_user_path) %> |
   <%= link_to('Delete your account', user_path, method: :delete, data: { confirm: 'Are you sure you want to delete your account? Note: this is a permanent action. Click \'OK\' to confirm or \'Cancel\' to go back.'}) %>
 </div>
