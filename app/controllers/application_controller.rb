@@ -23,4 +23,22 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user?
+
+  def admin?
+    current_user.user_type == 'admin'
+  end
+
+  helper_method :admin?
+
+  def require_admin
+    unless current_user_admin?
+      redirect_to root_path, notice: "You are not authorized to do that."
+    end
+  end
+
+  def current_user_admin?
+    current_user && current_user.user_type == 'admin'
+  end
+
+  helper_method :current_user_admin?
 end

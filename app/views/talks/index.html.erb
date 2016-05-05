@@ -26,4 +26,6 @@
     </div>
   <% end %>
 </div>
-<%= link_to('Add a new talk', new_talk_path) %>
+<% if current_user && current_user.user_type == 'admin' %>
+  <%= link_to('Add a new talk', new_talk_path) %>
+<% end %>

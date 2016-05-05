@@ -1,6 +1,6 @@
 <div class='container'>
   <h1>Registrations for <%= @talk.title %><span class="blinking-cursor">|</span></h1>
   <% @registrations.each do |r| %>
-    <li><%= mail_to(r.email_address, "#{r.first_name} #{r.last_name}") %></li>
+    <li><%= mail_to(r.user.email_address, "#{r.user.first_name} #{r.user.last_name}") %></li>
   <% end %>
 </div>
