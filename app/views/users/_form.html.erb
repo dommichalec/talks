@@ -2,7 +2,7 @@
 <%= render 'layouts/errors', object: @user %><br>
   <p>
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, autofocus: true %>
   </p>
   <p>
     <%= f.label :last_name %>
@@ -20,9 +20,10 @@
     <%= f.label :password_confirmation, "Confirm your password" %>
     <%= f.password_field :password_confirmation %>
   </p>
+  <p class='lead'>Already an existing member? <%= link_to "Sign in here", new_session_path %></p>
   <% if @user.new_record? %>
-    <%= f.submit "Get in there, tiger", class: 'btn btn-md btn-secondary' %>
+    <%= f.submit "Get in there, tiger", class: 'btn btn-md btn-success' %>
   <% else %>
-    <%= f.submit "Update your account", class: 'btn btn-md btn-secondary' %>
+    <%= f.submit "Update your account", class: 'btn btn-md btn-success' %>
   <% end %>
 <% end %>

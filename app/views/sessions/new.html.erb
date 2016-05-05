@@ -1,0 +1,16 @@
+<div class='container'>
+  <h1>Sign in<span class="blinking-cursor">|</span></h1>
+
+  <%= form_tag(session_path) do %>
+    <p>
+      <%= label_tag :email_address %>
+      <%= email_field_tag :email_address, nil, autofocus: true %>
+    </p>
+    <p>
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil %>
+    </p>
+    <p class='lead'>Haven't claimed your free membership yet? <%= link_to "Sign up here", new_user_path %></p>
+    <%= submit_tag "Sign in", class: 'btn btn-md btn-success' %>
+  <% end %>
+</div>

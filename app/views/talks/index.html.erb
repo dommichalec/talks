@@ -1,12 +1,16 @@
 <div style="background:transparent !important", class="jumbotron jumbotron-fluid centered">
   <div class="container">
     <h1>Interviews with those who've been there, coded that, and learned something along the way.<span class="blinking-cursor">|</span></h1><br>
-    <%= link_to 'Claim your free membership', signup_path, class: 'btn btn-success btn-lg' %>
+    <%= link_to 'Claim your free membership today', signup_path, class: 'btn btn-success btn-lg' %>
   </div>
 </div>
 <div class='container'>
-  <h1 class='centered'><%= pluralize(@talks.count, 'upcoming live talk') %></h1>
-
+  <h2 class='centered'>Existing memeber? Sign in to register for our <%= pluralize(@talks.count, 'upcoming live talk') %></h2>
+  <div class=row>
+    <div class="centered">
+  <%= render 'sessions/new' %>
+    </div>
+  </div>
   <% @talks.each do |t| %>
     <div class="row">
       <div class="col-md-4 col-md-push-9">
@@ -17,7 +21,7 @@
           <%= display_registration_for(t) %>
         <h5>a conversation with <%= t.speaker %></h5>
         <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
-        <h4><%= t.date %> (<%= pluralize(t.spots_left, 'available spot')%> left)</h4>
+        <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <%= t.date %> (<%= pluralize(t.spots_left, 'available spot')%> left)</h4>
       </div>
     </div>
   <% end %>

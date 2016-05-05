@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  def self.authenticate(email_address, password)
+    user = User.find_by(email_address: email_address)
+    user && user.authenticate(password)
+  end
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :first_name, :last_name, presence: true
