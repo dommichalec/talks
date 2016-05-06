@@ -2,6 +2,7 @@
   <h1><%= "#{@user.first_name} #{@user.last_name}"%><span class="blinking-cursor">|</span></h1>
   <%= profile_image_for(@user) %>
   <p class='lead'>member since <%= @user.created_at %></p>
+  <p class='lead'>Membership status: <strong><%= @user.user_type %></strong></p>
 
   <% if @registrations.any? %>
   <h3>Current and past registrations:</h3>

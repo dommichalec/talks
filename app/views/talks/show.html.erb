@@ -2,12 +2,12 @@
   <h1><%= @talk.title %><span class="blinking-cursor">|</span></h1>
   <p class='text-muted'><%= @talk.topic %>
   <img src="http://placehold.it/950x550">
-  <h4>About <%= @talk.speaker %></h4>
+  <h4>About the speaker: </h4>
   <p><%= @talk.speaker_profile %></p>
 
   <% if current_user %>
     <% if @current_upvote %>
-      <h3><%= button_to "Mark this video as unhelpful", '#', class: 'btn btn-danger' %></h3>
+      <h3><%= button_to "Mark this video as unhelpful", talk_like_path(@talk, @current_upvote), class: 'btn btn-danger', method: :delete %></h3>
     <% else %>
       <h3><%= button_to "Mark this video as helpful", talk_likes_path(@talk), class: 'btn btn-success' %></h3>
     <% end %>
