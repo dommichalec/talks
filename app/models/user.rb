@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :registrations, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_talks, through: :likes, source: :talk
+  has_many :liked_talks, through: :likes, source: :talk # talks are 'liked_talks'
 
   def self.authenticate(email_address, password)
     user = User.find_by(email_address: email_address)
