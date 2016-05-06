@@ -1,6 +1,6 @@
 <div class='container'>
   <h1><%= @talk.title %><span class="blinking-cursor">|</span></h1>
-  <p class='text-muted'><%= @talk.topic %>
+  <span><p class='text-muted lead'><%= @talk.topic %></p><h3><%= display_registration_for(@talk) %></h3></span>
   <img src="http://placehold.it/950x550">
   <h4>About the speaker: </h4>
   <p><%= @talk.speaker_profile %></p>
@@ -12,9 +12,8 @@
       <h3><%= button_to "Mark this video as helpful", talk_likes_path(@talk), class: 'btn btn-success' %></h3>
     <% end %>
   <% end %>
+  <p><em>(<%= pluralize(@likers.size, 'member') %> found this video helpful so far)</em></p>
 
-  <h1><%= display_registration_for(@talk) %></h1>
-  <h3><%= pluralize(@likers.size, 'member') %> found this video helpful</h3>
   <% if current_user_admin? %>
     <p class='lead'><%= link_to("View registrations", talk_registrations_path(@talk)) %> <em>(<%= @talk.registrations.count %>)</em></p>
     <%= link_to('Edit this talk', edit_talk_path) %> |
