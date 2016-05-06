@@ -5,10 +5,12 @@
   </div>
 </div>
 <div class='container'>
-  <h2 class='centered'>Existing memeber? Sign in to register for our <%= pluralize(@talks.count, 'upcoming live talk') %></h2>
-  <div class=row>
-    <div class="centered">
-  <%= render 'sessions/new' %><br>
+    <div class='existing_member'>
+      <h2 class='centered'>Existing memeber? Sign in to register for our <%= pluralize(@talks.count, 'upcoming live talk') %></h2>
+      <div class=row>
+        <div class="centered">
+      <%= render 'sessions/new' %><br>
+        </div>
     </div>
   </div>
   <br><% @talks.each do |t| %>

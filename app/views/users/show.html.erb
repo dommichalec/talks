@@ -4,12 +4,12 @@
   <p class='lead'>member since <%= @user.created_at %></p>
 
   <% if @registrations.any? %>
-  <h3>Current and past registrations</h3>
+  <h3>Current and past registrations:</h3>
     <% @registrations.each do |r| %>
       <h4><%= link_to(r.talk.title, r.talk) %> (registered <%= time_ago_in_words(r.created_at) %> ago)</h4>
     <% end %>
   <% end %>
-  <h3>Talks <%= get_perspective(@user) %> enjoyed</h3>
+  <h3>Talks <%= get_perspective(@user) %> found helpful:</h3>
   <% @liked_talks.each do |talk| %>
     <h4><%= link_to("#{talk.title}", talk_path(talk))%> by <%= "#{talk.speaker}" %></h4>
   <% end %>
