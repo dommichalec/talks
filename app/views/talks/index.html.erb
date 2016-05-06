@@ -24,6 +24,12 @@
         <h5>a conversation with <%= t.speaker %></h5>
         <p class='lead text-muted'><%= truncate(t.topic, :length => 100, separator: ' ') %></p>
         <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <%= t.date %> (<%= pluralize(t.spots_left, 'available spot')%> left)</h4>
+        <% if t.categories.any? %>
+        <h4>Topics covered in this talk: </h4>
+          <% t.categories.each do |category| %>
+            <p><%= category.name %></p>
+          <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>
