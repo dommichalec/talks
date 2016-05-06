@@ -16,6 +16,7 @@ class TalksController < ApplicationController
     when current_user
       @current_upvote = current_user.likes.find_by(talk_id: @talk.id)
     end
+    @categories = @talk.categories
   end
 
   def edit
@@ -54,6 +55,6 @@ class TalksController < ApplicationController
   private
 
   def talk_params
-    params.require(:talk).permit(:title, :topic, :speaker, :speaker_profile, :date, :capacity)
+    params.require(:talk).permit(:title, :topic, :speaker, :speaker_profile, :date, :capacity, category_ids: [])
   end
 end

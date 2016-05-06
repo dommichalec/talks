@@ -4,7 +4,12 @@
   <img src="http://placehold.it/950x550">
   <h4>About the speaker: </h4>
   <p><%= @talk.speaker_profile %></p>
-
+  <h4>Topics covered in this talk</h4>
+  <% if @categories.any? %>
+    <% @categories.each do |category| %>
+      <p><%= category.name %></p>
+    <% end %>
+  <% end %>
   <% if current_user %>
     <% if @current_upvote %>
       <h3><%= button_to "Mark this video as unhelpful", talk_like_path(@talk, @current_upvote), class: 'btn btn-danger', method: :delete %></h3>
