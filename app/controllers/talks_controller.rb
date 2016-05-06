@@ -9,7 +9,11 @@ class TalksController < ApplicationController
   def show
     @talk = Talk.find(params[:id])
     @likers = @talk.likers
-    if current_user
+    case
+    when current_user && @talk.sold_out?
+      flash.now[:notice] = "#{@talk.title} with #{@talk.speaker} is no longer accepting registrations"
+      @current_upvote = current_user.likes.find_by(talk_id: @talk.id)
+    when current_user
       @current_upvote = current_user.likes.find_by(talk_id: @talk.id)
     end
   end
