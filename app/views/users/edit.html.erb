@@ -1,6 +1,6 @@
 <div class='container'>
   <h1>Edit your account<span class="blinking-cursor">|</span></h1>
   <%= profile_image_for(@user) %>
-  <p><em>Not digging your Gravatar?</em></p>
+  <p><em>Not digging your Gravatar? </em><%= link_to("Create or update it here", 'http://en.gravatar.com', :target => '_blank')%></p>
   <%= render 'form' %>
 </div>
