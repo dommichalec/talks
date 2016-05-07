@@ -16,7 +16,7 @@
   <div class='container'>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "About", root_path %></li>
+        <li><%= link_to "Developer resources", resources_path %></li>
         <% if current_user %>
         <li><div class= 'user_nav_image' ></div><%= link_to profile_image_for(current_user), current_user %></li>
         <li><%= link_to "Sign out", session_path, :method => :delete %></li>

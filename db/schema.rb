@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507155243) do
+ActiveRecord::Schema.define(version: 20160507211610) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20160507155243) do
   end
 
   add_index "registrations", ["talk_id"], name: "index_registrations_on_talk_id"
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+  end
 
   create_table "talks", force: :cascade do |t|
     t.string   "title"
