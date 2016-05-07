@@ -21,7 +21,9 @@
     <%= f.password_field :password_confirmation %>
   </p>
 
-  <p class='lead'>Already an existing member? <%= link_to "Sign in here", new_session_path %></p>
+  <% unless current_user %>
+    <p class='lead'>Already an existing member? <%= link_to "Sign in here", new_session_path %></p>
+  <% end %>
   <% if @user.new_record? %>
     <%= f.submit "Get in there, tiger", class: 'btn btn-md btn-success' %>
   <% else %>

@@ -10,7 +10,7 @@ class LikesController < ApplicationController
   def destroy
     like = current_user.likes.find(params[:id])
     like.destroy
-    redirect_to @talk, notice: "Ah, sorry you didn't find this talk very helpful!"
+    redirect_to @talk, notice: "Ah, sorry you didn't find #{@talk.title} very helpful!"
   end
 
   private

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only:[:edit, :update, :destroy]
+  before_action :require_correct_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   def require_correct_user
     @user = User.find(params[:id])
     unless current_user?(@user)
-      redirect_to root_path, notice: "Hey now! You can't go editing other people's accounts."
+      redirect_to root_path, notice: "Don't worry, we'll open up other people's accounts for viewing soon."
     end
   end
 end

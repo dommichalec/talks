@@ -12,9 +12,9 @@ class TalksController < ApplicationController
     case
     when current_user && @talk.sold_out?
       flash.now[:notice] = "#{@talk.title} with #{@talk.speaker} is no longer accepting registrations"
-      @current_upvote = current_user.likes.find_by(talk_id: @talk.id)
+      set_upvote
     when current_user
-      @current_upvote = current_user.likes.find_by(talk_id: @talk.id)
+      set_upvote
     end
     @categories = @talk.categories
   end
@@ -54,7 +54,11 @@ class TalksController < ApplicationController
 
   private
 
+  def set_upvote
+    @current_upvote = current_user.likes.find_by(talk_id: @talk.id)
+  end
+
   def talk_params
-    params.require(:talk).permit(:title, :topic, :speaker, :speaker_profile, :date, :capacity, category_ids: [])
+    params.require(:talk).permit(:title, :topic, :speaker, :speaker_profile, :date, :capacity, :category_ids)
   end
 end

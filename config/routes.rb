@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :categories
+  root 'talks#index'
+
   get 'signup', to: 'users#new'
+
+  resources :categories
   resource :session
   resources :users
-  root 'talks#index'
+
   resources :talks do
     resources :registrations
     resources :likes
