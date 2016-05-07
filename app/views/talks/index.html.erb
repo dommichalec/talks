@@ -1,18 +1,24 @@
 <div style="background:transparent !important", class="jumbotron jumbotron-fluid centered">
   <div class="container">
     <h1>Candid interviews with those who've been there, coded that, and learned priceless lessons along the way.<span class="blinking-cursor">|</span></h1><br>
-    <%= link_to 'Claim your free membership today', signup_path, class: 'btn btn-success btn-lg' %>
+    <% unless current_user %>
+      <%= link_to 'Claim your free membership today', signup_path, class: 'btn btn-success btn-lg' %>
+    <% end %>
   </div>
 </div>
 <div class='container'>
+  <% unless current_user %>
     <div class='existing_member'>
-      <h2 class='centered'>Existing memeber? Sign in to register for our <%= pluralize(@talks.count, 'upcoming live talk') %></h2>
+        <h2 class='centered'>Existing memeber? Sign in to register for our <%= pluralize(@talks.count, 'upcoming live talk') %></h2>
       <div class=row>
-        <div class="centered">
-      <%= render 'sessions/new' %><br>
-        </div>
+          <div class="centered">
+        <%= render 'sessions/new' %><br>
+          </div>
+      </div>
     </div>
-  </div>
+    <% else %>
+    <h2 class='centered'>Welcome back, <%= "#{current_user.first_name}." %> Feel free to register for upcoming talks below:</h2>
+  <% end %>
   <br><% @talks.each do |t| %>
     <div class="row">
       <div class="col-md-4 col-md-push-9">

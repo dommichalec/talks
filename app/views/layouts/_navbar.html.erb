@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "About", root_path %></li>
         <% if current_user %>
-        <li><%= link_to "#{current_user.first_name} #{current_user.last_name}", current_user %></li>
+        <li><div class= 'user_nav_image' ></div><%= link_to profile_image_for(current_user), current_user %></li>
         <li><%= link_to "Sign out", session_path, :method => :delete %></li>
         <% else %>
         <li><%= link_to "Sign up", new_user_path %></li>
