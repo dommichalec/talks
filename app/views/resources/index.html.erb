@@ -1,5 +1,5 @@
 <div class='container'>
-  <h1>Available resources for a becoming a better programmer<span class="blinking-cursor">|</span></h1>
+  <h1>Available resources for programmers<span class="blinking-cursor">|</span></h1>
   <% if @resources.any? %>
     <% @resources.each do |resource| %>
       <p class='lead'><%= link_to(resource.name, resource) %>- <em><%= resource.description %></em></p>
